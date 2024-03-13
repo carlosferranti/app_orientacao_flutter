@@ -1,0 +1,54 @@
+# IDE/Editor files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.lock
+*.log
+/.dart_tool/
+/.flutter-plugins
+/.flutter-plugins-dependencies
+
+# Flutter-specific build files
+/build/
+.dart_tool/
+.flutter-plugins
+.packages
+.pub/
+*.g.dart
+
+# Android-specific build files
+android/**/generated/
+android/**/outputs/
+android/key.properties
+android/gradle.properties
+android/local.properties
+android/.gradle/
+android/captures/
+
+# iOS-specific build files
+ios/Podfile.lock
+ios/Pods/
+ios/*.mode1v3
+ios/*.pbxuser
+ios/*.perspectivev3
+ios/Flutter/Flutter.framework/
+
+# macOS-specific build files
+macos/Flutter/Flutter.framework/
+
+# Windows-specific build files
+windows/flutter/flutter_assets/
+
+# Web-specific build files
+web/favicon.ico
+web/packages/
+
+# Other
+.DS_Store
+*.iml
+*.metadata
+*.swp
+*.lock
+*.log

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart'; // Importe o pacote url_launcher
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
 }
 
 class InstitutionalPage extends StatelessWidget {
-  // Função para abrir a URL externa
   _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -78,8 +77,7 @@ class InstitutionalPage extends StatelessWidget {
             ListTile(
               title: Text('Eventos'),
               onTap: () {
-                _launchURL(
-                    'https://sua-url-de-eventos.com'); // Chame a função para abrir a URL externa
+                _launchURL('https://sua-url-de-eventos.com'); // Chame a função para abrir a URL externa
               },
             ),
             ListTile(
@@ -108,7 +106,7 @@ class InstitutionalPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 40), // Distância superior adicionada aqui
+              SizedBox(height: 40),
               Text(
                 'Seja Bem-vindo à Associação Anjos da Natureza',
                 style: TextStyle(
@@ -208,24 +206,7 @@ class InstitutionalPage extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    //-- Eventos
-                    SizedBox(height: 40),
-                    Text(
-                      'Eventos',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por \'lorem ipsum\' mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    //-- Fotos
+                    // fotos
                     SizedBox(height: 40),
                     Text(
                       'Fotos',
@@ -242,10 +223,10 @@ class InstitutionalPage extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    //-- Documentos
+                    // documentos
                     SizedBox(height: 40),
                     Text(
-                      'Documentos',
+                      'Resultados',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -259,11 +240,51 @@ class InstitutionalPage extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
+                    //
                   ],
                 ),
               ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(10),
+        color: Colors.blue,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.whatshot),
+                  onPressed: () {
+                    _launchURL('https://www.whatsapp.com/'); // URL do WhatsApp
+                  },
+                ),
+                // IconButton(
+                //   icon: Icon(Icons.instagram),
+                //   onPressed: () {
+                //     _launchURL('https://www.instagram.com/'); // URL do Instagram
+                //   },
+                // ),
+                // IconButton(
+                //   icon: Icon(Icons.twitter),
+                //   onPressed: () {
+                //     _launchURL('https://twitter.com/'); // URL do Twitter
+                //   },
+                // ),
+              ],
+            ),
+            SizedBox(height: 8),
+            Text(
+              '\u00a9 2024 Associação de Orientação de Curitiba Anjos da Natureza. Todos os direitos reservados.',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );
